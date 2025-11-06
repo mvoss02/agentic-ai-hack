@@ -196,16 +196,16 @@ Create environment and container app using the pushed image and set the same env
 1. Create the Container App environment (replace the first 3 lines with the appropriate credentials). Don't worry, it should take about 10 minutes to run:
 
    ```bash
-   export RESOURCE_GROUP="<your-resource-group>"
-   export LOCATION="<your-location>"
-   export ENV_NAME="<your-env-name>"
+   export RESOURCE_GROUP="agentic-ai-app"
+   export LOCATION="swedencentral"
+   export ENV_NAME="agentic-ai-env"
    az containerapp env create --name $ENV_NAME --resource-group $RESOURCE_GROUP --location $LOCATION
    ```
 
 2. Create a unique name for your app and create your Azure Container App:
 
    ```bash
-   APP_NAME="<your-app-name>"
+   APP_NAME="agentic-ai-container-app"
    az containerapp create --name $APP_NAME --resource-group $RESOURCE_GROUP \
    --environment $ENV_NAME --image $ACR_NAME.azurecr.io/claim-manager:latest \
    --cpu 0.5 --memory 1.0Gi --min-replicas 1 --max-replicas 1 \

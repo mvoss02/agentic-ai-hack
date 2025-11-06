@@ -64,7 +64,7 @@ def run_simple_evaluation():
     parsed_endpoint = urlparse(project_endpoint)
     model_endpoint = f"{parsed_endpoint.scheme}://{parsed_endpoint.netloc}"
     deployment_name = "gpt-4.1-mini"
-    agent_name = "policy-checker"
+    agent_name = "agentic-ai-agent"
 
     # Initialize client
     credential = DefaultAzureCredential(exclude_interactive_browser_credential=False)
@@ -238,7 +238,7 @@ def run_simple_evaluation():
     print(f"\n📊 Running local evaluation with {len(evaluators_config)} evaluators...")
     
     results = evaluate(
-        evaluation_name="policy-checker-comprehensive-evaluation",
+        evaluation_name="agentic-ai-agent-comprehensive-evaluation",
         data=eval_input_path,
         evaluators=evaluators_config,
         output_path=eval_output_path,
